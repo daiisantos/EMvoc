@@ -1,0 +1,7 @@
+SELECT AVG(alternativa.pesoExatas),AVG(alternativa.pesoHumanas), AVG(alternativa.pesoSaude)
+FROM teste
+JOIN teste_has_alternativa ON teste_has_alternativa.teste_id = teste.id
+JOIN alternativa ON alternativa.id = teste_has_alternativa.alternativa_id
+WHERE teste.usuario_id = 1
+GROUP BY teste.id
+ORDER BY teste.id DESC

@@ -1,0 +1,238 @@
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS bancopp2 ;
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS bancopp2 DEFAULT CHARACTER SET utf8 ;
+USE bancopp2 ;
+
+-- -----------------------------------------------------
+-- Table usuario
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS usuario ;
+
+CREATE TABLE IF NOT EXISTS usuario (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NULL unique,
+  email VARCHAR(45) NULL unique,
+  senha VARCHAR(45) NULL,
+  PRIMARY KEY (id))
+
+
+
+ENGINE = InnoDB;
+
+
+
+
+
+
+
+-- -----------------------------------------------------
+-- Table pegunta
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS pegunta ;
+
+CREATE TABLE IF NOT EXISTS pegunta (
+  id INT NOT NULL AUTO_INCREMENT,
+  titulo VARCHAR(100) NULL,
+  PRIMARY KEY (id))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table alternativa
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS alternativa ;
+
+CREATE TABLE IF NOT EXISTS alternativa (
+  id INT NOT NULL AUTO_INCREMENT,
+  pegunta_id INT NOT NULL,
+  texto VARCHAR(100) NULL,
+  pesoExatas INT NULL,
+  pesoHumanas INT NULL,
+  pesoSaude INT NULL,
+  PRIMARY KEY (id),
+  INDEX fk_alternativa_pegunta_idx (pegunta_id ASC) VISIBLE,
+  CONSTRAINT fk_alternativa_pegunta
+    FOREIGN KEY (pegunta_id)
+    REFERENCES pegunta (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table teste
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS teste ;
+
+CREATE TABLE IF NOT EXISTS teste (
+  id INT NOT NULL AUTO_INCREMENT,
+  usuario_id INT NOT NULL,
+  PRIMARY KEY (id),
+  INDEX fk_teste_usuario1_idx (usuario_id ASC) VISIBLE,
+  CONSTRAINT fk_teste_usuario1
+    FOREIGN KEY (usuario_id)
+    REFERENCES usuario (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table teste_has_alternativa
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS teste_has_alternativa ;
+
+CREATE TABLE IF NOT EXISTS teste_has_alternativa (
+  teste_id INT NOT NULL,
+  alternativa_id INT NOT NULL,
+  PRIMARY KEY (teste_id, alternativa_id),
+  INDEX fk_teste_has_alternativa_alternativa1_idx (alternativa_id ASC) VISIBLE,
+  INDEX fk_teste_has_alternativa_teste1_idx (teste_id ASC) VISIBLE,
+  CONSTRAINT fk_teste_has_alternativa_teste1
+    FOREIGN KEY (teste_id)
+    REFERENCES teste (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT fk_teste_has_alternativa_alternativa1
+    FOREIGN KEY (alternativa_id)
+    REFERENCES alternativa (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+
+INSERT INTO bancopp2.pegunta
+(id,
+titulo)
+VALUES
+(1, 'Qual dessas habilidades você mais valoriza?'),
+(2, 'Qual dessas atividades parece mais prazerosa para você?'),
+(3, 'Como você costuma reagir diante de uma discussão?'),
+(4, 'Você se sente mais satisfeito(a) quando:'),
+(5, 'Quando precisa tomar uma decisão importante, você:'),
+(6, 'Em um mundo onde tudo é silêncio, o que teria mais valor?'),
+(7, 'Como você se sente ao ver alguém chorando perto de você?'),
+(8, 'Ao imaginar seu futuro, o que mais te anima?'),
+(9, 'Qual desses comportamentos você mais respeita nas pessoas?'),
+(10, 'Em seu tempo livre, você gosta mais de:'),
+(11, 'Você precisa atravessar um rio:'),
+(12, 'Qual dessas imagens mentais te dá mais paz?'),
+(13, 'Você encontra uma pedra com inscrições misteriosas.'),
+(14, 'Você vê alguém ignorando uma regra para ajudar outra pessoa:'),
+(15, 'Ao entrar em uma biblioteca antiga, o que chama sua atenção?'),
+(16, 'Se pudesse ser reconhecido por algo, seria por:'),
+(17, 'Durante uma caminhada, você observa o céu mudando de cor.'),
+(18, 'Você recebe um desafio inesperado.'),
+(19, 'Diante de uma dúvida que ninguém consegue resolver, você:'),
+(20, 'Durante uma noite silenciosa, o que costuma ocupar seus pensamentos?');
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO bancopp2.alternativa
+(pegunta_id,
+texto,
+pesoExatas,
+pesoHumanas,
+pesoSaude)
+VALUES
+(1,'Empatia.',20,50,100),
+(1,'Comunicação.',50,100,80),
+(1,'Raciocínio lógico.',100,70,80),
+(2, 'Ajudar alguém em uma situação difícil.', 40, 60, 100),
+(2, 'Escrever um texto ou apresentar um tema.', 40, 100, 80),
+(2, 'Resolver um problema lógico ou montar algo do zero.', 100, 50, 80),
+
+(3, 'Busca ouvir todos e/ou acalmar os ânimos.', 30, 60, 100),
+(3, 'Gosta de argumentar e defender sua visão com fatos.', 60, 100, 70),
+(3, 'Prefere resolver com objetividade, sem rodeios.', 100, 70, 50),
+
+(4, 'Consegue ajudar alguém de verdade.', 20, 60, 100),
+(4, 'Ganha um debate ou convence alguém com seus argumentos.', 50, 100, 70),
+(4, 'Resolve um problema difícil sozinho(a).', 100, 70, 50),
+
+(5, 'Considera como isso afetará os outros ao seu redor.', 20, 60, 100),
+(5, 'Analisa o impacto disso no futuro e nos princípios envolvidos.', 50, 100, 70),
+(5, 'Lista os prós e contras e escolhe a melhor opção.', 100, 70, 50),
+
+(6, 'O toque.', 20, 60, 100),
+(6, 'O olhar.', 50, 100, 70),
+(6, 'A escrita.', 100, 70, 50),
+
+(7, 'Sente um impulso de acolher, mesmo sem saber o motivo.', 20, 60, 100),
+(7, 'Fica desconfortável, mas tenta entender o que gerou aquilo.', 50, 100, 70),
+(7, 'Pensa em como ajudar a resolver o problema da pessoa.', 100, 70, 50),
+
+(8, 'Sentir que estou sendo útil para a vida das pessoas.', 20, 60, 100),
+(8, 'Estar envolvido em debates, projetos ou mudanças sociais.', 50, 100, 70),
+(8, 'Criar ou melhorar algo de forma concreta e inteligente.', 100, 70, 50),
+
+(9, 'Capacidade de cuidar dos outros sem esperar nada em troca.', 20, 60, 100),
+(9, 'Consciência crítica e posicionamento social.', 50, 100, 70),
+(9, 'Rigor lógico, precisão e foco em resultados.', 100, 70, 50),
+
+(10, 'Conversar com amigos, ouvir histórias ou aconselhar.', 20, 60, 100),
+(10, 'Assistir documentários, ler sobre qualquer coisa ou escrever.', 50, 100, 70),
+(10, 'Jogar jogos de lógica, programar ou montar/desmontar coisas.', 100, 70, 50),
+
+
+(11, 'Procurar alguém que more por perto e pedir ajuda.', 20, 60, 100),
+(11, 'Questionar por que é tão importante atravessar.', 50, 100, 70),
+(11, 'Observar o ambiente e criar uma hipótese para atravessar.', 100, 70, 50),
+
+(12, 'Alguém segurando sua mão e te dando apoio em silêncio quando você está mal.', 20, 60, 100),
+(12, 'Uma conversa longa em uma varanda sobre a vida.', 50, 100, 70),
+(12, 'Um quadro branco cheio de fórmulas resolvidas com perfeição por você.', 100, 70, 50),
+
+(13, 'Se pergunta se ela tem algum valor para alguém.', 20, 60, 100),
+(13, 'Tenta decifrar o que aquilo diz sobre uma cultura.', 50, 100, 70),
+(13, 'Analisa os símbolos como um código lógico.', 100, 70, 50),
+
+(14, 'O mais importante é o bem-estar de quem precisa.', 20, 60, 100),
+(14, 'A situação pode justificar a quebra da regra.', 50, 100, 70),
+(14, 'Regras existem por um motivo, devem ser seguidas.', 100, 70, 50),
+
+(15, 'As pessoas que passaram por ali e suas histórias.', 20, 60, 100),
+(15, 'A forma como o conhecimento foi guardado.', 50, 100, 70),
+(15, 'A estrutura e organização do lugar.', 100, 70, 50),
+
+(16, 'Ajudar pessoas em momentos difíceis.', 20, 60, 100),
+(16, 'Expressar ideias que façam as pessoas pensarem.', 50, 100, 70),
+(16, 'Criar soluções inovadoras para problemas reais.', 100, 70, 50),
+
+(17, 'Pensa em como isso afeta o humor e as emoções das pessoas.', 30, 60, 100),
+(17, 'Fica refletindo sobre como isso inspirou poetas e escritores.', 50, 100, 70),
+(17, 'Tenta entender o fenômeno por trás da mudança das cores.', 100, 70, 50),
+
+(18, 'Busca apoio de alguém de confiança.', 20, 60, 100),
+(18, 'Analisa o impacto e pensa em alternativas.', 50, 100, 70),
+(18, 'Foca em encontrar a forma mais eficiente de resolver.', 100, 70, 50),
+
+(19, 'Fica inquieto e preocupado.', 20, 60, 100),
+(19, 'Procura livros, vídeos ou artigos para explorar diferentes visões.', 50, 100, 70),
+(19, 'Testa possibilidades até encontrar uma resposta funcional.', 100, 70, 50),
+
+(20, 'Preocupações com o bem-estar das pessoas que ama.', 30, 60, 100),
+(20, 'Reflexões sobre o sentido da vida e das escolhas que fez.', 50, 100, 70),
+(20, 'Cenários futuros e maneiras de resolver desafios com eficiência.', 100, 70, 50);
+
+
+
+
+
+
