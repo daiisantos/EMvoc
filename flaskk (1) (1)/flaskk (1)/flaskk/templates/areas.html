@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/informacoesarea.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div style="width: 70%; margin: auto;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+<script>
+        // Retrieve data passed from Flask
+        const labels = ['Exatas', 'Humanas', 'Saúde'];
+        const chartData = {{chart_data}};
+
+        // Get the canvas element
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        // Create the Chart.js chart
+        new Chart(ctx, {
+            type: 'radar', // or 'line', 'pie', etc.
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Dados do último teste',
+                    data: chartData,
+                    backgroundColor: 'rgba(81, 115, 255, 0.2)',
+                    borderColor: 'rgba(4, 28, 125, 0.94)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

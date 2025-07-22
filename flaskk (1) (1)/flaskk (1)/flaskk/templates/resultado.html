@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resultadp</title>
+</head>
+<body>
+ <link rel="stylesheet" href="{{ url_for('static', filename='styles/resultado.css') }}">
+</head>
+
+
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <h2>Seu resultado é:</h2>
+      <h3>{{ txt_area|capitalize }}</h3>
+
+      {% if txt_area == 'exatas' %}
+        <p>Você tem facilidade em pensar logicamente, resolver problemas e criar soluções práticas. Provavelmente gosta de desafios intelectuais, jogos de lógica e situações que exigem raciocínio. A área de Exatas pode oferecer oportunidades incríveis em engenharia, computação, arquitetura, matemática e muito mais!</p>
+
+      {% elif txt_area == 'humanas' %}
+        <p>Você demonstra sensibilidade, empatia, boa comunicação e curiosidade sobre as relações humanas e culturais. Provavelmente gosta de refletir, ouvir, analisar o mundo e entender o comportamento das pessoas. A área de Humanas inclui carreiras como psicologia, jornalismo, direito, sociologia, filosofia, história e outras fascinantes!</p>
+
+      {% elif txt_area == 'saude' %}
+        <p>Você se preocupa com o bem-estar das pessoas, demonstra empatia e interesse por ajudar em momentos difíceis. Provavelmente gosta de entender o funcionamento do corpo e da mente, além de se sentir útil cuidando do outro. A área da Saúde pode te levar a caminhos como medicina, enfermagem, fisioterapia, nutrição, biomedicina e muito mais!</p>
+      {% endif %}
+
+      <a class="botao-ir" href="{{ url_for(txt_area) }}">Conheça mais sobre a área de {{ txt_area }}</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,156 @@
+body {
+    margin: 0%;
+
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #3955E0;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+ul {
+    display: flex;
+    gap: 50px;
+
+}
+li {
+    list-style-type: none;
+    color: 	#F0FFFF;
+    margin-right: 20px;
+
+}
+
+li a {
+    color: #F0FFFF;
+    font-weight: bold;
+}
+
+li a:hover {
+    color: #00FFFF;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#btnMain {
+    background-color: #AAC8EB;
+    border-radius: 4px;
+    width: 100px;
+    height: 50px;
+}
+
+#btnMain:hover {
+    background-color: rgb(137, 178, 206);
+}
+
+#btnMain:hover {
+    transition: transform 0.3s ease;
+}
+
+#btnMain:hover {
+    transform: scale(1.1);
+}
+
+.ex {
+    display: flex;
+    justify-content: center;
+
+}
+
+#p {
+    display: flex;
+    justify-content: center;
+
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+span {
+    color: #2A3687;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    gap: 60px;
+
+}
+
+h3 {
+    margin: 5%;
+}
+
+.sub {
+    width: 165px;
+    height: 40px;
+    background-color: #5376D0;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+
+}
+
+.sub:hover {
+    background-color: #4389da;
+}
+
+.sub:hover {
+    transition: transform 0.3s ease;
+}
+
+.sub:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    gap: 20%;
+    width: 200px;
+    height: 200px;
+    background-color: #5376D0;
+}
+
+.area {
+    display: flex;
+    gap: 10%;
+    margin-top: 2%;
+}
+
+.card:hover {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+h1 span {
+    color: #6C72E3;
+}

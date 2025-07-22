@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMvoc-Loguin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/criarconta.css') }}">
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Areas</a></li>
+                <li><a href="#">Sobre</a></li>
+
+            </ul>
+
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="interface">
+            <img id="img1" src="{{ url_for('static', filename='components/images/Capturar.PNG') }}" alt="EmVoc">
+
+            
+            <form method="POST" action="/entraruser">
+         <div class="dados">
+                <h3>Email</h3>
+                <input type="email" name="email" placeholder="Digite seu Email">
+                <h3>Senha</h3>
+                <input type="password" name="senha" placeholder="Digite sua senha">
+                <input type="submit" value="Enviar" class="btn-enviar">
+                <a href="/criarconta">Não tem uma conta? Cadastre-se</a>
+     </div>
+     </form>
+     {% if erro %}
+    <h5 style="color: red;">{{ erro }}</h5>
+    {% endif %}
+
+
+        </div>
+    </main>
+
+    <footer>
+        <h5>©Todos os direitos reservados aos alunos do IFPE</h5>
+    </footer>
+
+
+</body>
+
+</html>

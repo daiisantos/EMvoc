@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMvoc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+</head>
+<body>
+
+    <header>
+
+        <img src="{{ url_for('static', filename='components/images/capturarr.png') }}" alt="" class="imghome">
+
+        <nav>
+            <a href="/inicio">Inicio</a>
+            <a href="#">Areas</a>
+            <a href="#">Sobre</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <div class="div1">
+        <h1>Descubra sua carreira com a Melhor do Brasil!</h1>
+        <h2>Teste rápido para descobrir a carreira dos sonhos!</h2>
+        <a href="/criarconta">
+            <button class="bt1" >Criar Conta</button>
+        </a>
+        <a href="/entrar">
+            <button class="bt1">Entrar</button>
+        </a>
+
+        </div>
+
+
+        <div class="div2">
+
+        <img src="{{ url_for('static', filename='components/images/imghome.png') }}" width="auto" height="auto" alt="" class="mulherimg">
+
+        </div>
+
+    </main>
+
+    <footer>
+        <h3>©Todos os direitos reservados aos alunos do IFPE</h3>
+    </footer>
+    
+</body>
+</html>

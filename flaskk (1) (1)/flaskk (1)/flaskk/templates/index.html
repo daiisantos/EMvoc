@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmVoc</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+
+  <header>
+   <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div>
+      <h2>Descubra qual área profissionalizante mais combina com <span>você</span>!</h2>
+      <div class="ex">
+        <a href="{{ url_for('test') }}"><button id="btnMain">Fazer teste</button></a>
+      </div>
+      <div id="p">
+        <p>Respondendo algumas perguntas você terá noção de qual carreira é a melhor para você.</p>
+      </div>
+    </div>
+  </main>
+
+  <section>
+    <div class="ex">
+      <h3> Descubra agora um pouco sobre cada área!</h3>
+    </div>
+  </section>
+
+  <div class="grid">
+    <a href="{{ url_for('humanas') }}"><button class="sub">Humanas</button></a>
+    <a href="{{ url_for('exatas') }}">  <button class="sub">Exatas</button></a>
+    <a href="{{ url_for('saude') }}"> <button class="sub">Saúde</button></a>
+  </div>
+
+</body>
+</html>

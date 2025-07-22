@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sobre</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/informacoesarea.css') }}">
+</head>
+<body>
+
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('test') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<h2>Sobre</h2>
+<p>O EMvoc é um projeto criado por estudantes do Ensino Médio com o objetivo de ajudar outros alunos a descobrirem sua vocações profissionais de forma simples, leve e acessível.
+Sabemos que escolher uma carreira não é fácil. Por isso, desenvolvemos uma plataforma com testes vocacionais interativos que indicam possíveis áreas de interesse, como saúde, tecnologia, humanas, exatas e muito mais.
+Mais do que respostas prontas, o EMvoc busca orientar e inspirar, oferecendo uma experiência amigável para quem ainda está começando a pensar no futuro profissional.</p>
+<h4>
+    O Nosso objetivo é:
+    <br><br>
+    • Ajudar alunos indecisos com suas escolhas profissionais.<br>
+    • Incentivar a reflexão sobre interesses e habilidades.<br>
+    • Mostrar possibilidades de carreira de forma acessível.
+  </h4>
+</body>
+</html>

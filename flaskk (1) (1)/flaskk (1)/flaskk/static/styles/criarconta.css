@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    height: 80px;
+    background-color: rgb(55, 55, 221);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: aqua;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 3px;
+}
+
+nav {
+    font-size: 20px;
+}
+
+main {
+    flex: 1; /* Ocupa o espaço restante da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    overflow: auto; /* permite rolagem se a imagem for grande */
+}
+
+#img1 {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    height: 80px;
+    background-color: rgb(41, 40, 40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5 {
+    color: white;
+}
+
+
+
+.interface{
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 600px;
+
+}
+
+img{
+    position: relative;
+    top: 20px;
+    left: 225px;
+}
+
+h2{
+    position: relative;
+    top: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.dados{
+    left: 30px;
+    position: relative;
+    top: 80px;
+
+}
+
+h3{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 500px;
+}
+
+
+input[type="email"],
+input[type="password"],
+input[type="text"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+  outline: none;
+}
+
+
+.btn-enviar {
+  display: block;
+  margin-top: 20px;
+  width: 500px;
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.btn-enviar:hover {
+  background-color: #357bd8;
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-enviar:active {
+  transform: scale(0.97);
+}
+
+
+

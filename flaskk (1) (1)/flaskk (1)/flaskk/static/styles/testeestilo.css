@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4fa;
+    color: #333;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background-color: #3955E0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    height: 60px;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    color: #F0FFFF;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00FFFF;
+}
+
+main .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3955E0;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-block {
+    background-color: #f9fbff;
+    padding: 15px 20px;
+    border-left: 6px solid #3955E0;
+    border-radius: 10px;
+}
+
+.pergunta {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    border: 2px solid #3955E0;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.2s;
+}
+
+
+input[type="radio"]:checked + label::before {
+    background-color: #3955E0;
+    box-shadow: inset 0 0 0 4px white;
+}
+
+
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-enviar {
+    background-color: #3955E0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #2b43b6;
+}

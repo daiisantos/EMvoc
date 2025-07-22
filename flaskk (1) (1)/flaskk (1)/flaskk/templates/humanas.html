@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/informacoesarea.css') }}">
+</head>
+<body>
+
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2>Humanas</h2>
+  <p>Áreas de Humanas são ideais para quem gosta de entender o comportamento humano, analisar sociedades, refletir sobre o mundo, comunicar ideias e promover transformações sociais.</p>
+  <h3>Algumas carreiras da área de Humanas:</h3>
+ <ul class="lista">
+        <li>
+            <strong>Psicólogo(a)</strong> – estuda a mente e o comportamento humano, ajudando pessoas a lidarem com emoções, traumas e relações.
+        </li>
+        <li>
+            <strong>Professor(a)</strong> – ensina, inspira e transforma vidas por meio da educação.
+        </li>
+        <li>
+            <strong>Advogado(a)</strong> – atua na defesa de direitos, interpretação das leis e mediação de conflitos.
+        </li>
+        <li>
+            <strong>Jornalista</strong> – investiga, apura e comunica informações relevantes à sociedade.
+        </li>
+        <li>
+            <strong>Historiador(a)</strong> – pesquisa o passado para entender o presente e contribuir com reflexões sobre o futuro.
+        </li>
+        <li>
+            <strong>Sociólogo(a)</strong> – analisa as estruturas sociais, desigualdades, cultura e comportamento coletivo.
+        </li>
+        <li>
+            <strong>Antropólogo(a)</strong> – estuda as culturas humanas, tradições e modos de vida ao redor do mundo.
+        </li>
+        <li>
+            <strong>Publicitário(a)</strong> – cria campanhas criativas para promover produtos, ideias ou causas.
+        </li>
+    </ul>
+<h3>Se você se identifica com questões sociais, gosta de refletir, comunicar e entender o mundo ao seu redor, a área de Humanas pode ser o seu caminho! Ela é vasta, rica em possibilidades e cheia de oportunidades para quem deseja causar impacto na sociedade.</h3>
+</body>
+</html>

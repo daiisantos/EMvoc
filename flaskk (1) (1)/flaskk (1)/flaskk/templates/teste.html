@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="{{ url_for('static', filename='styles/testeestilo.css') }}">
+    <title>{{ Teste }}</title>
+</head>
+<body>
+    
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+  <h1>Teste Vocacional</h1>
+
+   <form action="/responder" method="POST">
+  <div class="organizacao">
+    {% for question in html_questions %}
+      <div class="question-block">
+        <p>{{ loop.index }}. {{ question.pegunta }}</p>
+        <input type="radio" id="q{{ question.id }}a" name="question_{{ question.id }}" value="{{question.idResposta1}}" required>
+        <label for="q{{ question.id }}a">{{ question.resposta1 }}</label><br>
+        <input type="radio" id="q{{ question.id }}b" name="question_{{ question.id }}" value="{{question.idResposta2}}">
+        <label for="q{{ question.id }}b">{{ question.resposta2 }}</label><br>
+        <input type="radio" id="q{{ question.id }}c" name="question_{{ question.id }}" value="{{question.idResposta3}}">
+        <label for="q{{ question.id }}c">{{ question.resposta3 }}</label><br>
+      </div>
+    {% endfor %}
+  </div>
+  <input type="submit" value="Enviar" class="btn-enviar">
+</form>
+
+
+</main>
+</body>
+</html>

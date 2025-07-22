@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/informacoesarea.css') }}">
+</head>
+<body>
+
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<h2>Exatas</h2>
+
+<p>Áreas de exatas são perfeitas para quem gosta de resolver problemas, usar a lógica, entender como as coisas funcionam e criar soluções práticas.
+</p>
+  <h3>Algumas carreiras da área de Exatas:</h3>
+  <ul class="lista">
+      <li><strong>Engenheiro(a)</strong>: pode atuar nas áreas civil, elétrica, mecânica, ambiental, entre outras</li>
+ <li>
+            <strong>Cientista da Computação</strong>: Desenvolve sistemas, softwares e tecnologias inovadoras.
+        </li>
+        <li>
+            <strong>Arquiteto(a)</strong>: Planeja e projeta espaços, unindo estética e funcionalidade.
+        </li>
+        <li>
+            <strong>Matemático(a)</strong>: Pesquisa, analisa e aplica conhecimentos em diversas áreas.
+        </li>
+        <li>
+            <strong>Estatístico(a)</strong>: Interpreta dados e cria modelos para prever cenários.
+        </li>
+        <li>
+            <strong>Físico(a)</strong>: Estuda os fenômenos do universo e suas leis naturais.
+        </li>
+        <li>
+            <strong>Programador(a)/Desenvolvedor(a)</strong>: Cria e mantém aplicações digitais e sistemas.
+        </li>
+        <li>
+            <strong>Analista de Dados</strong>: Interpreta informações para apoiar decisões estratégicas.
+        </li>
+  </ul>
+
+  <h3>Se você ainda estiver em dúvida, tudo bem! A área de Exatas é cheia de possibilidades e pode se revelar ainda mais interessante à medida que você conhece suas diferentes faces.</h3>
+
+</body>
+</html>

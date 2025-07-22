@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='styles/informacoesarea.css') }}">
+</head>
+<body>
+
+  <header>
+    <a href="{{ url_for('home') }}">
+      <img  src="{{ url_for('static', filename='components/images/Capturar-removebg-preview.png') }}" alt="Logo EmVoc">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('inicio') }}">Início</a></li>
+        <li><a href="{{ url_for('areas') }}">Área</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+<h2>Saúde</h2>
+
+<p>Áreas da saúde são ideais para quem se preocupa com o bem-estar dos outros, tem empatia e gosta de entender o corpo e a mente humana.
+</p>
+  <h3>Algumas carreiras da área de Saúde:</h3>
+  <ul class="lista">
+        <li>
+            <strong>Médico(a)</strong> – atua na prevenção, diagnóstico e tratamento de doenças.
+        </li>
+        <li>
+            <strong>Enfermeiro(a)</strong> – cuida de pacientes em hospitais, clínicas e unidades de saúde.
+        </li>
+        <li>
+            <strong>Psicólogo(a)</strong> – estuda o comportamento humano e oferece apoio emocional.
+        </li>
+        <li>
+            <strong>Fisioterapeuta</strong> – trabalha com reabilitação física e motora.
+        </li>
+        <li>
+            <strong>Nutricionista</strong> – planeja dietas e orienta sobre alimentação saudável.
+        </li>
+        <li>
+            <strong>Veterinário(a)</strong> – cuida da saúde dos animais e previne zoonoses.
+        </li>
+        <li>
+            <strong>Terapeuta ocupacional</strong> – ajuda pessoas a retomarem sua autonomia no dia a dia.
+        </li>
+        <li>
+            <strong>Técnico(a) de enfermagem</strong> – auxilia em procedimentos clínicos e hospitalares.
+        </li>
+    </ul>
+
+  <h3>Se você ainda estiver com dúvidas, tudo bem! A área da Saúde é ampla e acolhe diferentes perfis. Continue explorando e aprendendo sobre cada profissão com calma.</h3>
+
+</body>
+</html>
